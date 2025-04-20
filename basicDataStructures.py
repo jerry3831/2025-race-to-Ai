@@ -48,17 +48,19 @@ def organizer():
     }
     
     # displaying details for each book
-    for book in books:
-        print(f"{book} : {books[book]}")
-    print()
+    return books
     
 entries = int(input("Number of entries: ")) # Total number of entries
+books = []
 for entry in range(entries):
     print(f'Entry {entry+1}')
     organizer()
     print()
-    
+    books.append(organizer)
 
+for i in books:
+    for key, value in i.items():
+        print(f"{key} : {value}")        
 
 
 
